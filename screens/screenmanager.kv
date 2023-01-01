@@ -1,3 +1,11 @@
-#:include LoginScreen login_screen.LoginScreen
+# :include LoginScreen login_screen.LoginScreen
+# :include CadastroScreen cadastro_screen.CadastroScreen
+# :import FadeTransition kivy.uix.screenmanager.FadeTransition
 <MainScreenManager>
-    LoginScreen:
+    id: screen_manager
+    # LoginScreen:
+    #     id: login
+    #     name: "LoginScreen"
+    CadastroScreen:
+        id: cadastroscreen
+        name: "CadastroScreen"

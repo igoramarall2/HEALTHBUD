@@ -1,43 +1,49 @@
 <LoginScreen>
-    MDFloatLayout:
+    MDFloatLayout:  
         orientation: 'horizontal'
 
-        MDTopAppBar:
-            title: "HealthBudd"
-            elevation: 2
-            specific_text_color: 1,1,1,1
-            pos_hint: {"top":1}
-            left_action_items: [["menu", lambda x: callback()]]
-        
         Image:
             source: "imgs/splash-logo.png"
             size_hint: (0.3, 0.3)
-            pos_hint: {"center_x":0.5, "center_y":0.7}
-        
+            pos_hint: {"center_x":0.5, "center_y":0.74}
         MDLabel:
             text: 'Seja bem vindo!'
             font_style: "H5"
             halign: 'center'
             bold: True
-            pos_hint: {"center_x":0.5, "center_y":0.5}
+            pos_hint: {"center_x":0.5, "center_y":0.55}
         MDLabel:
             text: 'Faça login para continuar'
             font_style: "Caption"
             halign: 'center'
             bold: True
-            pos_hint: {"center_x":0.5, "center_y":0.45}
-        MDTextField:
+            pos_hint: {"center_x":0.5, "center_y":0.51}
+        MDTextField:            
+            id: email
             hint_text: 'Email'
-            pos_hint: {"center_x":0.5, "center_y":0.40}
+            pos_hint: {"center_x":0.5, "center_y":0.44}
             size_hint_x: .3
             icon_right: "email"
         MDTextField:
+            id: senha
             hint_text: 'Senha'
             password: True
             show_password: True
-            pos_hint: {"center_x":0.5, "center_y":0.32}
+            pos_hint: {"center_x":0.5, "center_y":0.37}
             size_hint_x: .3
-            icon_right: "lock"
+            icon_right: "key-variant"
+
+        MDTextButton:
+            text: "Criar conta"
+            font_style: "Caption"
+            pos_hint: {"center_x":0.5, "center_y":0.31}
+
+        MDIconButton:
+            icon: "eye-off"
+            pos_hint: {"center_y": .5}
+            #pos: text_field.width - self.width + dp(8), 0}
+            theme_text_color: "Hint"
+            on_release: app.tema_dark()                      
         MDRaisedButton:
             text: 'Entrar'
             text_color: 1,1,1,1
@@ -45,6 +51,9 @@
             pos_hint: {"center_x":0.5, "center_y":0.24}
             size_hint_x: .3
             elevation: 1
+            on_release:
+                root.sign_in()
+            
         MDRaisedButton:
             text: 'Entrar com Facebook'
             text_color: 1,1,1,1
@@ -67,3 +76,6 @@
             font_style: "Caption"
             halign: 'center'
             pos_hint: {"center_x":0.5, "center_y":0.05}
+
+
+          

@@ -1,7 +1,5 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
 from kivy.uix.screenmanager import ScreenManager
-
-
-sm = ScreenManager()
 
 
 class MainScreenManager(ScreenManager):

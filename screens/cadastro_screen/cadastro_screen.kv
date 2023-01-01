@@ -1,0 +1,101 @@
+<CadastroScreen>
+    MDFloatLayout:
+        orientation: 'horizontal'
+
+        MDTopAppBar:
+            title: "HealthBudd"
+            elevation: 2
+            specific_text_color: 1,1,1,1
+            pos_hint: {"top":1}
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 0, 0, 0)
+
+            MDNavigationDrawerHeader:
+                title: "Header title"
+                title_color: "#4a4939"
+                text: "Header text"
+                spacing: "4dp"
+                padding: "12dp", 0, 0, "56dp"
+
+            MDNavigationDrawerLabel:
+                text: "Mail"        
+        MDLabel:
+            text: 'Tela de Cadastros de Pacientes'
+            font_style: "H5"
+            halign: 'center'
+            bold: True
+            pos_hint: {"center_x":0.5, "center_y":0.81}
+        MDFloatingActionButton:
+            id: action_button
+            root_button_anim: True
+            icon: "home"
+            hint_animation: True
+            pos_hint: {"center_x":0.95, "center_y":0.06}
+            on_release: root.Entrada_de_Dados()
+        MDTextField:
+            id: nome
+            hint_text: 'Nome'
+            mode: "fill"
+            radius: [5,5,5,5]
+            pos_hint: {"center_x":0.5, "center_y":0.71}
+            size_hint_x: .3
+            #icon_right: "key-variant"
+        MDTextField:
+            id: sobrenome
+            hint_text: 'Sobrenome'
+            mode: "fill"
+            radius: [5,5,5,5]
+            pos_hint: {"center_x":0.5, "center_y":0.61}
+            size_hint_x: .3
+            #icon_right: "key-variant"
+        MDTextField:
+            id: idade
+            hint_text: 'Idade'
+            mode: "fill"
+            radius: [5,5,5,5]
+            pos_hint: {"center_x":0.5, "center_y":0.51}
+            size_hint_x: .3
+            #icon_right: "key-variant"
+        MDTextField:
+            id: email
+            hint_text: 'Email'
+            mode: "fill"
+            radius: [5,5,5,5]
+            pos_hint: {"center_x":0.5, "center_y":0.41}
+            size_hint_x: .3
+            #icon_right: "key-variant"
+        MDTextField:
+            id: celular
+            hint_text: 'Celular'
+            mode: "fill"
+            radius: [5,5,5,5]
+            pos_hint: {"center_x":0.5, "center_y":0.31}
+            size_hint_x: .3
+            #icon_right: "key-variant"
+        
+        MDSegmentedControl:
+            pos_hint: {"center_x": .5, "center_y": 0.21}
+            segment_panel_height: "40dp"
+            font_size:
+
+            MDSegmentedControlItem:
+                text: "Male"
+
+            MDSegmentedControlItem:
+                text: "Female"
+                        
+        MDRaisedButton:
+            text: "Data de Cadastro"
+            pos_hint: {'center_x': .3, 'center_y': .11}
+            on_release: root.show_date_picker() 
+        MDTextField:
+            id: data-visualization
+            hint_text: 'Data de cadastro'
+            mode: "fill"
+            radius: [5,5,5,5]
+            pos_hint: {"center_x":0.7, "center_y":0.11}
+            size_hint_x: .3
+            #icon_right: "key-variant"                       
